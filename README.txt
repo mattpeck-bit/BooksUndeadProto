@@ -12,3 +12,10 @@ https://www.youtube.com/results?search_query=unity+library+
 https://www.youtube.com/watch?v=KXahbH6d1V0
 
 https://developer.oculus.com/documentation/unity/unity-utilities-overview/#documentation/unity-import/
+
+BOOK
+
+- looks like I'm using a blender animation and then doing some scripting to add pages and page navigation
+
+https://www.youtube.com/watch?v=geyC6FfMFf8
+
