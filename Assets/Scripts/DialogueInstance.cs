@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueInstance : MonoBehaviour
+public class DialogueInstance
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Every dialogue instance will have four pieces of chosen player dialogue,an audio clip that plays before it, and a "pointer" of sorts to the next dialogue instance the choice sets up
+    string yDialogue;
+    string xDialogue;
+    string aDialogue;
+    string bDialogue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    DialogueInstance nextInstance;
 }
