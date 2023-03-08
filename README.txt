@@ -19,3 +19,6 @@ BOOK
 
 https://www.youtube.com/watch?v=geyC6FfMFf8
 
+DIALOGUE
+
+https://gamedevbeginner.com/how-to-play-audio-in-unity-with-examples/#:~:text=Unity%20has%20a%20built%20in,of%20the%20drop%20down%20menu.
