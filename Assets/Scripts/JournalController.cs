@@ -9,6 +9,7 @@ public class JournalController : MonoBehaviour
     public bool automatic = false;
     public Camera camera;
     public GameObject Journal;
+    private int pageCount = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +20,59 @@ public class JournalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //We're checking to see if the object is being looked at
-        if (canISee(camera, Journal))
+        //We're checking to see if we're in the vicinity of the journal
+        if (AmIClose(camera, Journal))
         {
-
+            //If we are, we can use the triggers to move the animation along
+            if(OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.3f)
+            {
+                bookAnimator.SetBool("go_ahead", true);
+            }
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) < 0.3f)
+            {
+                bookAnimator.SetBool("go_ahead", false);
+            }
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.3f)
+            {
+                bookAnimator.SetBool("go_back", true);
+            }
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.3f)
+            {
+                bookAnimator.SetBool("go_back", false);
+            }
         }
     }
 
-    private bool canISee(Camera c, GameObject targetObj)
+    private bool AmIClose(Camera c, GameObject targetObj)
     {
-        return false;
+        var targTransform = targetObj.transform.position;
+        var myLocation = c.transform.position;
+
+        var tempDistance = Vector3.Distance(myLocation, targTransform);
+        if (tempDistance <= 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void AddPage()
+    {
+        //Get the gameobject representing the page we are on
+        GameObject gamePage = Journal.transform.GetChild(1+(pageCount / 2)).gameObject;
+
+        //Then get the material for the page we're on (should be blank) and add the appropriate texture
+        Material[] pageMats = gamePage.GetComponent<Renderer>().materials;
+
+        foreach(Material mat in pageMats) {
+            if(mat.name == "Pg " + pageCount)
+            {
+                mat.SetTexture("_MainTex", Resources.Load<Texture2D>($"Journal Page Textures/Page{pageCount}"));
+                break;
+            }
+        }
     }
 }
