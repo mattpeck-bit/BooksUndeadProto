@@ -1,24 +1,14 @@
 
-LINKS:
+LINKS TO ASSETS USED:
 
-https://www.youtube.com/playlist?list=PLXCgN_6N-cUxdJrPGL93xSL1oUuqt3Hvt
 
-https://www.youtube.com/watch?v=ojI9mOaK8gg
+https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
 
-https://www.google.com/search?q=unity+interactive+in+game+book&biw=2560&bih=1329&sxsrf=AJOqlzXlG-WmhKk8xPZSLOg343WlewJZbw%3A1677948906388&ei=6ncDZPWxF_GhptQP3pSYqAI&ved=0ahUKEwj1zpDk3sL9AhXxkIkEHV4KBiUQ4dUDCA8&uact=5&oq=unity+interactive+in+game+book&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICCEQoAEQwwQyCAghEKABEMMEMggIIRCgARDDBDIICCEQoAEQwwQ6CggAEEcQ1gQQsAM6CgghEKABEMMEEApKBAhBGABQvRBY6iRg8SVoB3ABeACAAZkBiAH0CpIBAzUuOJgBAKABAcgBBMABAQ&sclient=gws-wiz-serp
+https://assetstore.unity.com/packages/3d/props/interior/props-library-edition-63372
 
-https://www.youtube.com/results?search_query=unity+library+
+https://assetstore.unity.com/packages/3d/props/books-animated-159808
 
-https://www.youtube.com/watch?v=KXahbH6d1V0
+README:
 
-https://developer.oculus.com/documentation/unity/unity-utilities-overview/#documentation/unity-import/
-
-BOOK
-
-- looks like I'm using a blender animation and then doing some scripting to add pages and page navigation
-
-https://www.youtube.com/watch?v=geyC6FfMFf8
-
-DIALOGUE
-
-https://gamedevbeginner.com/how-to-play-audio-in-unity-with-examples/#:~:text=Unity%20has%20a%20built%20in,of%20the%20drop%20down%20menu.
+- Most of the original code is in the highest level scripts folder, used to program the journal and the dialogue
+- Use your joysticks to move once you enter the game, and your triggers to move the blue journal once you've found it

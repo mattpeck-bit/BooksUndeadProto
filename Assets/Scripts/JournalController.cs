@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class JournalController : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class JournalController : MonoBehaviour
     public Camera camera;
     public GameObject Journal;
     private int pageCount = 4;
+    private Texture2D myTex;
+    public TextMeshPro hintText;
 
     // Start is called before the first frame update
     void Start()
     {
+        myTex = Resources.Load<Texture2D>($"Journal Page Textures/Page4.png");
         bookAnimator = GetComponent<Animator>();
     }
 
@@ -61,18 +65,29 @@ public class JournalController : MonoBehaviour
 
     public void AddPage()
     {
+        hintText.text = "HINT: The demons have trapped you in this hellish prototype. Please exit the game, the prototype is finished.";
         //Get the gameobject representing the page we are on
-        GameObject gamePage = Journal.transform.GetChild(1+(pageCount / 2)).gameObject;
+        GameObject gamePage = Journal.transform.GetChild(3).gameObject;
 
         //Then get the material for the page we're on (should be blank) and add the appropriate texture
         Material[] pageMats = gamePage.GetComponent<Renderer>().materials;
 
-        foreach(Material mat in pageMats) {
+        /*for (int i = 0; i < pageMats.Length; i++)
+        {
+            Debug.LogError(pageMats[i].name);
+            if (pageMats[i].name == "pg4 (Instance)")
+            {
+                Debug.LogError("SHOULD BE SETTING TEXTURE");
+                pageMats[i].mainTexture = myTex;
+            }
+        }*/
+
+        /*foreach(Material mat in pageMats) {
             if(mat.name == "Pg " + pageCount)
             {
                 mat.SetTexture("_MainTex", Resources.Load<Texture2D>($"Journal Page Textures/Page{pageCount}"));
                 break;
             }
-        }
+        }*/
     }
 }
